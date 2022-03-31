@@ -1,23 +1,29 @@
-import logo from './logo.svg';
+import React, {useState, useEffect} from 'react';
 import './App.css';
+import HouseList from './components/HouseList';
+import Navbar from "./components/NavBar/Navbar";
+import Properties from './components/Properties';
+
+
 
 function App() {
+
+  const [allProperties , setAllProperties] = useState( [] )
+
+  useEffect( ()=>{
+    fetch ("http://localhost:3000/houses")
+    .then (res => res.json())
+    .then ((data)=>{
+      setAllProperties(data)
+    })
+  
+    }, [] )
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Navbar />
+  
+     <HouseList allProperties={allProperties}/>
     </div>
   );
 }
