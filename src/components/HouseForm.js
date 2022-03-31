@@ -15,8 +15,11 @@ const handleName =()=>{
     <form>
       <h3>Add New Property</h3>
 
-      <label htmlFor="Name"></label>
-      <textarea type="text" onChange={handleName}/>
+      <label htmlFor="name">Name</label>
+      <input type="text" onChange={handleName}/>
+
+      <label htmlFor="Address"></label>
+      <textarea/>
       
       
       
