@@ -1,12 +1,31 @@
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+ text-align: center;
+ 
   font-family: 'Montserrat', sans-serif;
 }
 
 .App-logo {
-  align-items: center;
-  width: 50% ;
-  height: auto;
+  height: 150px;
+  width: 250px;
+  position: center;
+ 
+}
+.form-card {
+  width: 50%;
+  height: 50px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  resize: none;
+}
+.button {
+  background-color: rgb(127, 121, 238);
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
 }

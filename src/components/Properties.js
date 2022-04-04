@@ -1,8 +1,4 @@
 import React from 'react'
-import {useState} from 'react'
-
-
-
 
 
 function Properties({propertyToRender}) {
@@ -21,6 +17,7 @@ function Properties({propertyToRender}) {
           <div className="card__content">
             <div className="card__title">{propertyToRender.name}</div>
             <p className="card__text">{propertyToRender.address}</p>
+            <p className='card-text'>{propertyToRender.notes}</p>
             <div className="card__detail">
             </div>
             </div>
