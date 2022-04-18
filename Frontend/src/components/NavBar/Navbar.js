@@ -14,7 +14,7 @@ function Navbar(){
          
                <Link className='nav-links' to="/">Home</Link>
               
-               <Link className='nav-links' to="/houselist">Properties</Link>
+               <Link className='nav-links' to="/house">Properties</Link>
 
                <Link className='nav-links' to="/marketing">Marketing</Link>
            </nav>

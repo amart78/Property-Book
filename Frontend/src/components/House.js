@@ -3,12 +3,15 @@ import Properties from './Properties';
 import HouseForm from './HouseForm'
 
 
-function HouseList() {
+function House() {
   
   const [allProperties , setAllProperties] = useState( [] )
 
+
+
+
   useEffect( ()=>{
-    fetch ("http://localhost:3000/houses")
+    fetch ("http://localhost:3000/house")
     .then (res => res.json())
     .then ((properties)=>{
       setAllProperties(properties)
@@ -37,4 +40,4 @@ function HouseList() {
   }
 
 
-export default HouseList;
+export default House;

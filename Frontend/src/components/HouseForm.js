@@ -16,7 +16,7 @@ const handleAddress =(e)=>{
   setAddress(e.target.value)
 }
 const handleNotes =(e)=>{
-  setImage(e.target.value)
+  setNotes(e.target.value)
 }
 const handleImage =(e)=>{
   setImage(e.target.value)
@@ -32,7 +32,7 @@ const handleSubmit = (e) =>{
   }
 
   
-  fetch("http://localhost:4000/houses", {
+  fetch("http://localhost:3000/houses", {
     method:'POST',
     headers:{
       'Content-Type':'application/json'
@@ -47,20 +47,20 @@ const handleSubmit = (e) =>{
 }
 
   return (
-    <form  onSubmit={handleSubmit} >
-      <h2>Add New Property</h2>
+    <form onSubmit={handleSubmit} >
+      <h3>Add New Property</h3>
 
-      <label  htmlFor="name">Name  </label>
-      <input className="form-card"type="text" id="name" name="name" value={name} onChange={handleName}/>
+      <label htmlFor="name">Name    </label>
+      <input className='form-card' type="text" id="name" name="name" value={name} onChange={handleName}/>
         <br></br><br></br>
-      <label  htmlFor="address">Address</label>
-      <input className="form-card" type="text" id="address" name="address" onChange={handleAddress} />
+      <label htmlFor="address">Address</label>
+      <input className='form-card' type="text" id="address" name="address" onChange={handleAddress} />
         <br></br><br></br>
-      <label  htmlFor="address">Notes  </label>
-      <input className="form-card" type="text" id="address" name="address" onChange={handleNotes} />
+      <label htmlFor="address">Notes    </label>
+      <input className='form-card' type="text" id="address" name="address" onChange={handleNotes} />
        <br></br><br></br>
-      <label  htmlFor="image">Image  </label>
-      <input className="form-card" type="text" id="image" name="image" onChange={handleImage}/>
+      <label htmlFor="image">Image    </label>
+      <input className='form-card' type="text" id="image" name="image" onChange={handleImage}/>
         <br></br><br></br>
       <button className='button' type="submit">Add Property</button>
       
