@@ -1,10 +1,10 @@
 class ApplicationController < Sinatra::Base
   set :default_content_type, 'application/json'
   
-  get "/house" do
-    house = House.all
-    house.to_json
-  end
+  # get "/house" do
+  #   house = House.all
+  #   house.to_json
+  # end
   
   # post "/houses" do
   #   house = House.create

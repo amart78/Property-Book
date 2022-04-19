@@ -11,7 +11,7 @@ function House() {
 
 
   useEffect( ()=>{
-    fetch ("http://localhost:3000/house")
+    fetch ("http://localhost:9292/house")
     .then (res => res.json())
     .then ((properties)=>{
       setAllProperties(properties)
