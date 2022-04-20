@@ -16,11 +16,16 @@ ActiveRecord::Schema.define(version: 2022_04_19_144246) do
     t.string "name"
     t.string "address"
     t.string "notes"
+    t.string "property_manager"
     t.string "image"
+    t.integer "manager_id"
   end
 
   create_table "managers", force: :cascade do |t|
     t.string "name"
+    t.string "properties_managing"
+    t.string "bio"
+    t.string "image"
   end
 
 end

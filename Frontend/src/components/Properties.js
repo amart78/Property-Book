@@ -16,8 +16,9 @@ function Properties({propertyToRender}) {
           
           <div className="card__content">
             <div className="card__title">{propertyToRender.name}</div>
-            <p className="card__text">{propertyToRender.address}</p>
-            <p className='card-text'>{propertyToRender.notes}</p>
+            <p className="card-text">{propertyToRender.address}</p>
+            <p className="card-text">{propertyToRender.notes}</p>
+            <p className="card-text">{propertyToRender.property_manager}</p>
             <div className="card__detail">
             </div>
             </div>
