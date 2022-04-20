@@ -32,7 +32,7 @@ const handleSubmit = (e) =>{
   }
 
   
-  fetch("http://localhost:3000/house", {
+  fetch("http://localhost:9292/house", {
     method:'POST',
     headers:{
       'Content-Type':'application/json'
