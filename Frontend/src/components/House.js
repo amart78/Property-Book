@@ -14,6 +14,7 @@ function House() {
     fetch ("http://localhost:9292/manager")
     .then (res => res.json())
     .then ((managers)=>{
+      console.log('lol', managers);
       setAllManagers(managers)
     })
   
@@ -31,7 +32,36 @@ function House() {
   const addHouse = (newHouse) =>{
     setAllProperties([...allProperties, newHouse])
   }
-    
+  
+
+  const handlePropertyEdit =( propertyObjToEDIT , id )=>{
+
+    console.log(" DON'T FORGET YOU'RE ABOUT HIT A PRY 👀 !!")  //
+  
+  
+    fetch( `http://localhost:9292/house/${id}` , {
+  
+      method: "PATCH",
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify( propertyObjToEDIT)
+  
+  
+    } )
+    .then( r => r.json() )
+    .then( ( updatedProperty )=>{ 
+        let resultOfFilter = allProperties.filter( ( property )=>{
+  
+          return property.id !== updatedProperty.id
+  
+        } )
+  
+        setAllProperties( [ updatedProperty , ...resultOfFilter ] )
+  
+  
+    } )
+  }
+
+
   return ( 
     <div>
     <h1>The Properties</h1>
@@ -39,8 +69,10 @@ function House() {
         {
         allProperties.map( (eachObj)=>{
            return(
-            <Properties key={eachObj.id} propertyToRender={eachObj}/>) 
-           })
+            <Properties allManagers={allManagers} key={eachObj.id} propertyToRender={eachObj}
+                        handlePropertyEdit={handlePropertyEdit}
+            />) 
+          })
         }
      </ul>
      <h1>Meet The Property Managers</h1>

@@ -8,6 +8,7 @@ const [name, setName] = useState("")
 const [address, setAddress] = useState("")
 const [notes, setNotes] = useState("")
 const [image, setImage] = useState("")
+const [manager, setManager] = useState("")
 
 const handleName =(e)=>{
   setName(e.target.value)
@@ -21,6 +22,9 @@ const handleNotes =(e)=>{
 const handleImage =(e)=>{
   setImage(e.target.value)
 }
+const handleManager =(e)=>{
+  setManager(e.target.value)
+}
 
 const handleSubmit = (e) =>{
   e.preventDefault()
@@ -28,7 +32,8 @@ const handleSubmit = (e) =>{
     name, 
     address,
     notes, 
-    image
+    image,
+    manager,
   }
 
   
@@ -61,6 +66,9 @@ const handleSubmit = (e) =>{
        <br></br><br></br>
       <label htmlFor="image">Image    </label>
       <input className='form-card' type="text" id="image" name="image" onChange={handleImage}/>
+        <br></br><br></br>
+        <label htmlFor="address">Property Manager   </label>
+      <input className='form-card' type="text" id="address" name="address" onChange={handleManager}/>
         <br></br><br></br>
       <button className='button' type="submit">Add Property</button>
       
